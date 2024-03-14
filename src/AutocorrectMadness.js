@@ -20,17 +20,23 @@ function AutocorrectMadness() {
     const words = text.split(' ');
     const mangledWords = words.map(word => {
       if (autocorrectIntensity === 'low') {
-        if (Math.random() < 0.1) { // Lower chance of mangling
-             return applyRandomTransformation(word);
-        } 
+        if (Math.random() < 0.2) { 
+          return applyRandomTransformation(word); 
+        } else { 
+          return word; // Make sure to return the word even if not mangled
+        }
     } else if (autocorrectIntensity === 'medium') {
-        if (Math.random() < 0.2) { // Your original logic
-          return applyRandomTransformation(word);
-        }
+      if (Math.random() < 0.4) { 
+        return applyRandomTransformation(word); 
+      } else { 
+        return word; // Make sure to return the word even if not mangled
+      }
     } else { // high
-        if (Math.random() < 0.4) { // Higher chance of mangling
-          return applyRandomTransformation(word);
-        }
+      if (Math.random() < 0.8) { 
+        return applyRandomTransformation(word); 
+      } else { 
+        return word; // Make sure to return the word even if not mangled
+      }
     }
     });
     return mangledWords.join(' ');
