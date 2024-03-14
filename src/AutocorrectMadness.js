@@ -11,7 +11,7 @@ function AutocorrectMadness() {
   };
 
   const updateMangledText = (text) => {
-    const transformedText = mangleText(text); 
+    const transformedText = applyRandomTransformation(text); // Adjust if needed
     setMangledText(transformedText);
   };
 
@@ -90,7 +90,7 @@ function AutocorrectMadness() {
     <option value="high">High</option>
 </select>
            <textarea value={userInput} onChange={handleInputChange} />
-           <h2>The Mangled Version:</h2>
+           <h2>Corrected Version:</h2>
            <p>{mangledText}</p>
       </div>
    ); 
