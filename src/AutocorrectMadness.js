@@ -25,11 +25,11 @@ function AutocorrectMadness() {
         } 
     } else if (autocorrectIntensity === 'medium') {
         if (Math.random() < 0.2) { // Your original logic
-            // ...
+          return applyRandomTransformation(word);
         }
     } else { // high
         if (Math.random() < 0.4) { // Higher chance of mangling
-             // ...
+          return applyRandomTransformation(word);
         }
     }
     });
