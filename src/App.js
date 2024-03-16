@@ -1,4 +1,4 @@
-import AutocorrectMadness, { mangleText } from './AutocorrectMadness'; // Import mangleText
+import AutocorrectMadness from './AutocorrectMadness'; // No more { mangleText } 
 import './App.css'; 
 
 function App() {

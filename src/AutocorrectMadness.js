@@ -32,7 +32,7 @@ function AutocorrectMadness() {
         return word; // Make sure to return the word even if not mangled
       }
     } else { // high
-      if (Math.random() < 0.8) { 
+      if (Math.random() < 2) { 
         return applyRandomTransformation(word); 
       } else { 
         return word; // Make sure to return the word even if not mangled
@@ -44,9 +44,9 @@ function AutocorrectMadness() {
     
     const applyRandomTransformation = (word) => {
       const transformations = [
-        replaceWithSimilarSounding, // Prioritize this
         swapAdjacentLetters,
-        insertRandomLetter 
+        insertRandomLetter,
+        replaceWithSimilarSounding // Prioritize this
     ];
       const randomIndex = Math.floor(Math.random() * transformations.length);
       return transformations[randomIndex](word);
@@ -54,7 +54,7 @@ function AutocorrectMadness() {
     
     // Simple transformation functions
     const swapAdjacentLetters = (word) => {
-      if (word.length < 2) {
+      if (word.length < 42) {
         return word; 
       }
     
@@ -102,6 +102,10 @@ function AutocorrectMadness() {
    ); 
   };
 
+  const updateMangledText = (text) => {
+    const transformedText =  mangleText(text); // Call mangleText here 
+    setMangledText(transformedText);
+};
 
 
 
